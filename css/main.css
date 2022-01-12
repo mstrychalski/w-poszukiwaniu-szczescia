@@ -1,0 +1,155 @@
+body {
+  /*background: #0F2027;  !* fallback for old browsers *!*/
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+
+}
+
+body, html {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  position: relative;
+  transition: scale 0.3s;
+  scale(1);
+}
+
+.flip-card:not(.shuffle) {
+  cursor: pointer;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 0.4s ease-in-out, opacity 0.2s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+  /*opacity: 0.9;*/
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+}
+
+.flip-card:not(.shuffle):hover {
+  z-index: 999999999;
+}
+
+.flip-card:not(.shuffle):hover .flip-card-inner {
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+  transform: scale(1.05);
+}
+
+.flip-card.flip:hover .flip-card-inner {
+  box-shadow: 5px 5px 10px;
+  transform: rotateY(180deg);
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg) scale(1);
+}
+
+/*.flip-card:hover .flip-card-inner {*/
+/*  opacity: 1;*/
+/*}*/
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 900px;
+  padding: 0.5rem;
+  display: flex;
+}
+
+.quote-wrapper {
+  display: flex;
+  max-width: 100%;
+  padding: 3rem;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #e3e3e3;
+  font-size: 2rem;
+}
+
+@media (max-width: 1280px) {
+  blockquote {
+    font-size: 1.5rem;
+  }
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
+}
