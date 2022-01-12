@@ -1,8 +1,7 @@
 body {
-  /*background: #0F2027;  !* fallback for old browsers *!*/
-  background-image: url(../img/bg.jpg);
+  background-color: #021632 !important;
+  background-image: url(../img/bg.jpg) !important;
   background-size: cover;
-
 }
 
 body, html {
@@ -41,7 +40,6 @@ body, html {
   transform: scale(1);
   transition: transform 0.4s ease-in-out, opacity 0.2s, box-shadow 0.3s;
   transform-style: preserve-3d;
-  /*opacity: 0.9;*/
   box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
 }
 
@@ -63,10 +61,6 @@ body, html {
 .flip-card.flip .flip-card-inner {
   transform: rotateY(180deg) scale(1);
 }
-
-/*.flip-card:hover .flip-card-inner {*/
-/*  opacity: 1;*/
-/*}*/
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
