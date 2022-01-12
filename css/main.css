@@ -45,18 +45,20 @@ body, html {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
 }
 
-.flip-card:not(.shuffle):hover {
-  z-index: 999999999;
-}
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:not(.shuffle):hover {
+    z-index: 999999999;
+  }
 
-.flip-card:not(.shuffle):hover .flip-card-inner {
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
-  transform: scale(1.05);
-}
+  .flip-card:not(.shuffle):hover .flip-card-inner {
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+    transform: scale(1.05);
+  }
 
-.flip-card.flip:hover .flip-card-inner {
-  box-shadow: 5px 5px 10px;
-  transform: rotateY(180deg);
+  .flip-card.flip:hover .flip-card-inner {
+    box-shadow: 5px 5px 10px;
+    transform: rotateY(180deg);
+  }
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
